@@ -1,11 +1,6 @@
-# `@starport/vue-boilerplate`
+# `tendermint/vue-template`
 
 > TODO: description
 
 ## Usage
 
-```
-const vueBoilerplate = require('@starport/vue-boilerplate');
-
-// TODO: DEMONSTRATE API
-```
