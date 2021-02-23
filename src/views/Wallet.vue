@@ -64,7 +64,7 @@ import {
 	Slip10,
 	Slip10Curve
 } from '@cosmjs/crypto'
-import { keyToWif } from '@/helpers/keys'
+import { keyToWif } from '@starport/vuex'
 
 export default {
 	name: 'Wallet',
