@@ -1,7 +1,7 @@
 <template>
 	<div v-if="initialized">
 		<div class="SpHeader" v-if="hasWallet">
-			<SpWallet
+			<SpWalletMenu
 				ref="wallet"
 				v-on:dropdown-opened="$refs.menu.closeDropdown()"
 			/>
