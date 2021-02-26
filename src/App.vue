@@ -1,21 +1,40 @@
 <template>
 	<div v-if="initialized">
-		<div class="SpHeader" v-if="hasWallet">
-			<SpWalletMenu
-				ref="wallet"
-				v-on:dropdown-opened="$refs.menu.closeDropdown()"
-			/>
-			<SpMenu v-on:menu-opened="$refs.wallet.closeDropdowns()" ref="menu" />
-		</div>
-		<router-view />
-		<div class="SpFooter">
-			<SpBlockHeight />
-			<div class="SpStatuses">
-				<SpStatusAPI />
-				<SpStatusRPC />
-				<SpStatusWS />
-			</div>
-		</div>
+		<SpWallet ref="wallet" v-on:dropdown-opened="$refs.menu.closeDropdown()" />
+		<SpLayout>
+			<template v-slot:sidebar>
+				<SpSidebar
+					v-on:sidebar-open="sidebarOpen = true"
+					v-on:sidebar-close="sidebarOpen = false"
+				>
+					<template v-slot:header>
+						<SpLogo />
+					</template>
+					<template v-slot:default>
+						<SpLinkIcon link="/" text="Dashboard" icon="Dashboard" />
+						<SpLinkIcon link="/modules" text="Modules" icon="Modules" />
+						<SpLinkIcon
+							link="/transactions"
+							text="Transactions"
+							icon="Transactions"
+						/>
+						<SpLinkIcon link="/types" text="Custom Type" icon="Form" />
+						<div class="sp-dash"></div>
+						<SpLinkIcon link="/settings" text="Settings" icon="Settings" />
+						<SpLinkIcon link="/docs" text="Documentation" icon="Docs" />
+					</template>
+					<template v-slot:footer>
+						<SpStatusAPI :showText="sidebarOpen" />
+						<SpStatusRPC :showText="sidebarOpen" />
+						<SpStatusWS :showText="sidebarOpen" />
+						<div class="sp-text">Build: v0.3.8</div>
+					</template>
+				</SpSidebar>
+			</template>
+			<template v-slot:content>
+				<router-view />
+			</template>
+		</SpLayout>
 	</div>
 </template>
 
@@ -28,15 +47,12 @@ body {
 <script>
 import './scss/app.scss'
 import '@starport/vue/lib/starport-vue.css'
-import SpMenu from './components/SpMenu'
 
 export default {
-	components: {
-		SpMenu
-	},
 	data() {
 		return {
-			initialized: false
+			initialized: false,
+			sidebarOpen: true
 		}
 	},
 	computed: {
