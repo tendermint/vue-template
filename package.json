@@ -33,7 +33,7 @@
     "@starport/vue": "^0.1.17",
     "@starport/vuex": "^0.1.18",
     "bip39": "^3.0.3",
-    "core-js": "^3.8.3",
+    "core-js": "^3.9.1",
     "crypto-js": "^4.0.0",
     "file-saver": "^2.0.5",
     "moment": "^2.29.1",
@@ -43,7 +43,7 @@
     "vuex": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.1",
+    "@babel/core": "^7.13.8",
     "@babel/node": "^7.13.0",
     "@vue/cli-plugin-babel": "^4.5.11",
     "@vue/cli-plugin-eslint": "^4.5.11",
@@ -52,7 +52,7 @@
     "@vue/compiler-sfc": "^3.0.6",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.20.0",
+    "eslint": "^7.21.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.6.0",
     "node-sass": "^5.0.0",
