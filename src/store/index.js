@@ -1,5 +1,4 @@
-import { createStore, createLogger } from 'vuex'
-//import { createStore } from 'vuex'
+import { createStore } from 'vuex'
 import init from './config'
 
 const store = createStore({
@@ -7,9 +6,7 @@ const store = createStore({
 		return {}
 	},
 	mutations: {},
-	actions: {},
-	chain: {},
-	plugins: [createLogger()]
+	actions: {}
 })
 init(store)
 export default store
